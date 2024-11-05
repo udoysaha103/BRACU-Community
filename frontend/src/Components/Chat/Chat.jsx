@@ -20,7 +20,7 @@ function Chat() {
       .catch((err) => {
         console.log(err);
       });
-  }, [activeHead]);
+  }, [activeHead, location.state.currentProfile.user_id]);
 
   return (
     <>
@@ -28,7 +28,7 @@ function Chat() {
       <div className="row" id="outer-wrapper">
         <div className="col-3" id="left-panel">
           {
-            chatHeads.map((chatHead: object, index) => {
+            chatHeads.map((chatHead, index) => {
               return <ChatHead currentProfile={location.state.currentProfile} chatHead={chatHead} setActiveHead={setActiveHead} key={index} />;
             })
           }

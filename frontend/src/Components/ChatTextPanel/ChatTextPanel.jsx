@@ -4,12 +4,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ChatThread from "../ChatThread/ChatThread";
 
-interface Props {
-  currentProfile: object;
-  activeHead: object;
-}
+// interface Props {
+//   currentProfile: object;
+//   activeHead: object;
+// }
 
-function ChatTextPanel({ currentProfile, activeHead }: Props) {
+function ChatTextPanel({ currentProfile, activeHead }) {
   const [chatHeadProfile, setChatHeadProfile] = useState({});
   const [text, setText] = useState("");
 
@@ -24,7 +24,7 @@ function ChatTextPanel({ currentProfile, activeHead }: Props) {
         receiver_id: activeHead.user_id,
         content: text,
       })
-      .then((res) => {
+      .then(() => {
         setText("");
       })
       .catch((error) => {

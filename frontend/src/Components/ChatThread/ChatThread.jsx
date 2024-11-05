@@ -1,13 +1,13 @@
 import styles from "./ChatThread.module.css";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface Props {
-  currentProfile: object;
-  activeHead: object;
-}
+// interface Props {
+//   currentProfile: object;
+//   activeHead: object;
+// }
 
-function ChatThread({ activeHead, currentProfile }: Props) {
+function ChatThread({ activeHead, currentProfile }) {
   const [chats, setChats] = useState([]);
   const [otherUser, setOtherUser] = useState({});
 
@@ -37,7 +37,7 @@ function ChatThread({ activeHead, currentProfile }: Props) {
 
   return (
     <div>
-      {chats.map((chat: object, index) => {
+      {chats.map((chat, index) => {
         return (
           <div key={index}>
             {chat.content === "" ? (

@@ -39,6 +39,7 @@ function Newsfeed() {
   useEffect(() => {
     usrSearch(searchBarText);
   }, [searchBarText]);
+
   useEffect(() => {
     axios
       .get(
@@ -48,6 +49,7 @@ function Newsfeed() {
         setUsrPost(res.data);
       });
   }, [statusText]);
+
   useEffect(() => {
     axios
       .get(
@@ -58,6 +60,7 @@ function Newsfeed() {
       })
       .catch((err) => console.log(err));
   }, []);
+
 
   return (
     <>

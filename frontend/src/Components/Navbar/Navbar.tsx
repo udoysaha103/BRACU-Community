@@ -9,7 +9,7 @@ interface Props {
   setSearchBarText?: (searchString: string) => void;
 }
 
-function Navbar( {currentProfile = location.state.currentProfile, onSearch, searchBarText, setSearchBarText}: Props ) {
+function Navbar( {currentProfile = location.state, onSearch, searchBarText, setSearchBarText}: Props ) {
   const SearchBarStyle = {
     width: "400px",
     height: "40px",
@@ -42,6 +42,14 @@ function Navbar( {currentProfile = location.state.currentProfile, onSearch, sear
   //     document.removeEventListener("keydown", keyDownHandler);
   //   };
   // }, [searchBarText]);
+
+  
+  useEffect(() => {
+    console.log("=====================================");
+    console.log(location.state);
+    console.log("=====================================");
+  }
+  , [location.state]);
 
   return (
     <>

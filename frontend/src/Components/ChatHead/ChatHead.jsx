@@ -2,13 +2,13 @@ import axios from "axios";
 import "./ChatHead.css";
 import { useEffect, useState } from "react";
 
-interface Props {
-  currentProfile: object;
-  chatHead: object;
-  setActiveHead: Function;
-}
+// interface Props {
+//   currentProfile: { user_id: string };
+//   chatHead: { seen_status: number; user_id: string; time_stamp: string };
+//   setActiveHead: (chatHead: object) => void;
+// }
 
-function ChatHead({ currentProfile, chatHead, setActiveHead }: Props) {
+function ChatHead({ currentProfile, chatHead, setActiveHead }) {
   const [chatHeadProfile, setChatHeadProfile] = useState({});
   const [seenStatus, setSeenStatus] = useState(chatHead.seen_status);
 
