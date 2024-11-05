@@ -55,7 +55,7 @@ function Comment({ allDetails, currentProfile }) {
       <div className="row">
         <div className="col-1 mt-1">
         <img
-            src={!allDetails.profile_picture?`./src/assets/${allDetails["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${allDetails.profile_picture}`}
+            src={!allDetails.profile_picture?`./${allDetails["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${allDetails.profile_picture}`}
             alt="Profile"
             className="ProfileStyle"
           />

@@ -62,13 +62,13 @@ function ChatHead({ currentProfile, chatHead, setActiveHead }) {
             <div className="col-3">
               {chatHeadProfile.gender === "1" ? (
                 <img
-                  src="./src/assets/maleAvatar.png"
+                  src="./maleAvatar.png"
                   alt="Profile"
                   className="ProfilePic"
                 />
               ) : (
                 <img
-                  src="./src/assets/femaleAvatar.png"
+                  src="./femaleAvatar.png"
                   alt="Profile"
                   className="ProfilePic"
                 />
@@ -97,13 +97,13 @@ function ChatHead({ currentProfile, chatHead, setActiveHead }) {
             <div className="col-3">
               {chatHeadProfile.gender === "1" ? (
                 <img
-                  src="./src/assets/maleAvatar.png"
+                  src="./maleAvatar.png"
                   alt="Profile"
                   className="ProfilePic"
                 />
               ) : (
                 <img
-                  src="./src/assets/femaleAvatar.png"
+                  src="./femaleAvatar.png"
                   alt="Profile"
                   className="ProfilePic"
                 />

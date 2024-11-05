@@ -49,7 +49,7 @@ function ChatThread({ activeHead, currentProfile }) {
                     <img
                       src={
                         !currentProfile.profile_picture
-                          ? `./src/assets/${
+                          ? `./${
                               currentProfile["gender"] === "1"
                                 ? "maleAvatar.png"
                                 : "femaleAvatar.png"
@@ -75,7 +75,7 @@ function ChatThread({ activeHead, currentProfile }) {
                     <img
                       src={
                         !otherUser.profile_picture
-                          ? `./src/assets/${
+                          ? `./${
                               otherUser["gender"] === "1"
                                 ? "maleAvatar.png"
                                 : "femaleAvatar.png"

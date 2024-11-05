@@ -52,7 +52,7 @@ function ChatTextPanel({ currentProfile, activeHead }) {
       <div id={styles.topbar}>
         <div id={styles.topbarContent}>
           <img 
-            src={!chatHeadProfile.profile_picture?`./src/assets/${chatHeadProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${chatHeadProfile.profile_picture}`}
+            src={!chatHeadProfile.profile_picture?`./${chatHeadProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${chatHeadProfile.profile_picture}`}
             alt="Pic"
             id={styles.profilepic}
           /> 

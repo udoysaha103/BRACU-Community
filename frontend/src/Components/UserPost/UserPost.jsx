@@ -138,7 +138,7 @@ function UserPost({ details, currentProfile }) {
             onClick={() => console.log("Pic")}
           >
           <img
-            src={!details.creator.profilePicture?`./src/assets/${details.creator["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${details.creator.profilePicture}`}
+            src={!details.creator.profilePicture?`./${details.creator["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${details.creator.profilePicture}`}
             alt="Profile"
             className="ProfileStyle"
           />
@@ -235,7 +235,7 @@ function UserPost({ details, currentProfile }) {
           >
             <div className="col-1 picButton">
               <img
-                src={!currentProfile.profile_picture?`./src/assets/${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${currentProfile.profile_picture}`}
+                src={!currentProfile.profile_picture?`./${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${currentProfile.profile_picture}`}
                 alt="Profile"
                 className="ProfileStyleSmall"
               />

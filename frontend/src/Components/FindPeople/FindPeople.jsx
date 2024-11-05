@@ -31,8 +31,8 @@ function FindPeople({allDetails, currentProfile}) {
             <div className="col-3">
               {
                 allDetails["gender"] === '1' ?
-                <img src="./src/assets/maleAvatar.png" alt="Profile Picture" className="profile_pic" /> :
-                <img src="./src/assets/femaleAvatar.png" alt="Profile Picture" className="profile_pic" />
+                <img src="./maleAvatar.png" alt="Profile Picture" className="profile_pic" /> :
+                <img src="./femaleAvatar.png" alt="Profile Picture" className="profile_pic" />
               }
             </div>
 

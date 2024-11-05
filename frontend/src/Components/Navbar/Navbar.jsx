@@ -52,7 +52,7 @@ function Navbar( {currentProfile = location.state, setSearchBarText} ) {
         <div className="container-fluid">
           {/* Logo */}
           <button className="navbar-brand" style={{marginRight: "25%"}} onClick={() => navigate("/home", {state: location.state.currentProfile})}>
-            <img src="./src/assets/Logo.png" alt="Logo" />
+            <img src="./Logo.png" alt="Logo" />
           </button>
 
           {/* Collapse button */}
@@ -97,7 +97,7 @@ function Navbar( {currentProfile = location.state, setSearchBarText} ) {
             <div style={{marginRight: "15px"}}> {/* Chat */}
               <button className="navbar" onClick={() => navigate('/chat', {state: {currentProfile: currentProfile}})}>
                 <img
-                  src="./src/assets/Chat_icon.png"
+                  src="./Chat_icon.png"
                   alt="Profile"
                   className="ProfileStyle"
                 />            
@@ -106,7 +106,7 @@ function Navbar( {currentProfile = location.state, setSearchBarText} ) {
             <div> {/* Profile */}
               <button className="navbar" onClick={() => navigate('/profile', {state: {currentProfile: currentProfile, targetProfile: currentProfile}})} onDoubleClick={() => navigate('/')}>
                 <img
-                  src={!currentProfile.profile_picture?`./src/assets/${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${currentProfile.profile_picture}`}
+                  src={!currentProfile.profile_picture?`./${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${currentProfile.profile_picture}`}
                   alt="Profile"
                   className="ProfileStyle"
                 />

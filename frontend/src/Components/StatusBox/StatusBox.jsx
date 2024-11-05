@@ -34,7 +34,7 @@ function StatusBox({ currentProfile, statusText, setStatusText }) {
           <div className="row">
             <div className="col-1">
               <img
-                src={!currentProfile.profile_picture?`./src/assets/${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${currentProfile.profile_picture}`}
+                src={!currentProfile.profile_picture?`./${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${currentProfile.profile_picture}`}
                 alt="Profile"
                 className="ProfileStyle"
               />

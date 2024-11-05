@@ -157,7 +157,7 @@ function UserProfile() {
         <div className="container" id="profile">
           <div className="coverPhoto">
             <img
-              src="src/assets/bottola.jpg"
+              src="./bottola.jpg"
               alt="cover_photo"
               id="cover-photo"
             />
@@ -173,7 +173,7 @@ function UserProfile() {
                   />
                 <div id="profile-container">
                   <img
-                    src={!location.state.targetProfile.profile_picture?`./src/assets/${location.state.targetProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${location.state.targetProfile.profile_picture}`}
+                    src={!location.state.targetProfile.profile_picture?`./${location.state.targetProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${location.state.targetProfile.profile_picture}`}
                     alt="Profile"
                     className="profile-photo"
                     onDoubleClick={handlePhotoChange}
