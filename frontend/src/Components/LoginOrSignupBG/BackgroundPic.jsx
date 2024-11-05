@@ -6,7 +6,9 @@ import "./BackgroundPic.css"
 
 function BackgroundPic( { children }) {
   return (
-    <div className="w-100 main_back">{children}</div>
+    <>
+      <div className="w-100 main_back">{children}</div>
+    </>
   )
 }
 
