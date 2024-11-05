@@ -76,7 +76,7 @@ function Login() {
   };
 
   return (
-    <MiddleBox logo="src/assets/Logo.png" logo_name="Logo">
+    <MiddleBox logo="./Logo.png" logo_name="Logo">
       <form className="login_form" onSubmit={handleSubmit}>
         <p className="text-center section_text">Login</p>
         {/* User name or email field */}
