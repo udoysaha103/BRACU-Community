@@ -1,13 +1,13 @@
 import axios from "axios";
 import "./StatusBox.css";
 
-interface Props {
-  currentProfile: object;
-  statusText: string;
-  setStatusText: Function;
-}
+// interface Props {
+//   currentProfile: object;
+//   statusText: string;
+//   setStatusText: Function;
+// }
 
-function StatusBox({ currentProfile, statusText, setStatusText }: Props) {
+function StatusBox({ currentProfile, statusText, setStatusText }) {
 
   const submitStatus = (event) => {
     event.preventDefault();

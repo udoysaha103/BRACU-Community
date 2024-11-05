@@ -5,12 +5,12 @@ import { useNavigate } from "react-router";
 import "./FindPeople.css"
 import axios from "axios";
 
-interface Props {
-    allDetails: object;
-    currentProfile: object;
-}
+// interface Props {
+//     allDetails: object;
+//     currentProfile: object;
+// }
 
-function FindPeople({allDetails, currentProfile}: Props) {
+function FindPeople({allDetails, currentProfile}) {
 
   const [mutual, setMutual] = useState(0);
   const navigate = useNavigate();

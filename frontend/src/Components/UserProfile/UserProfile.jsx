@@ -13,10 +13,11 @@ function UserProfile() {
   const [usrPost, setUsrPost] = useState([]);
   const [statusText, setStatusText] = useState("");
   const [connect, setConnect] = useState(false);
-  const [photo, setPhoto] = useState<File | null>(null);
+  // const [photo, setPhoto] = useState<File | null>(null);
+
   const navigate = useNavigate();
-  const handleNameSave = async (name:string) => {
-    const input = document.getElementById("name") as HTMLInputElement;
+  const handleNameSave = async (name) => {
+    const input = document.getElementById("name");
     const nameElement = document.createElement("div");
     nameElement.setAttribute("id", "name");
     nameElement.innerHTML = "Updating...";
@@ -28,15 +29,15 @@ function UserProfile() {
     nameElement.ondblclick = handleNameEdit;
     input?.replaceWith(nameElement);
   }
-  const handlePhotoUpload = async (e:any) => {
+  const handlePhotoUpload = async (e) => {
     const formData = new FormData();
     formData.append("myfile", e.target.files[0]);
     const response = await axios.post(`http://localhost:3000/user/uploadphoto/${location.state.currentProfile.user_id}`, formData)
     location.state.currentProfile.profile_picture = response.data.file;
     navigate("/profile", {state: location.state})
   }
-  const handlePhotoChange = (e:any) => {
-    const input = document.getElementById("photoinput") as HTMLInputElement;
+  const handlePhotoChange = () => {
+    const input = document.getElementById("photoinput");
     input.click();
   }
   const handleNameEdit = () => {
@@ -59,7 +60,7 @@ function UserProfile() {
     };
     nameElement?.replaceWith(input);
   }
-  const handleConnect = (sent_id: Number, received_id: Number) => {
+  const handleConnect = (sent_id, received_id) => {
     axios.post(`http://localhost:3000/user/sendrequest`, {user_id: sent_id, received_id: received_id})
     .then(res => {
       if (res.data["msg"] === "connected") {

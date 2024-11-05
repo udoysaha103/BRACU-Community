@@ -58,7 +58,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [erromsg, setErrormsg] = useState("");
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     // if email and password are correct, navigate to newsfeed with correct user profile

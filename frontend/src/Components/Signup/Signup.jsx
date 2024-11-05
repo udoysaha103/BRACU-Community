@@ -85,7 +85,7 @@ function Signup() {
     }
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (!checkPassword()) return;
     if (!formCheck) {

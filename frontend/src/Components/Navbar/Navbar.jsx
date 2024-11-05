@@ -1,15 +1,14 @@
-import { useEffect } from "react";
 import "./Navbar.css";
 import { useNavigate, useLocation } from "react-router";
 
-interface Props {
-  currentProfile?: object;
-  onSearch?: (searchString: string) => void;
-  searchBarText?: string;
-  setSearchBarText?: (searchString: string) => void;
-}
+// interface Props {
+//   currentProfile?: object;
+//   onSearch?: (searchString: string) => void;
+//   searchBarText?: string;
+//   setSearchBarText?: (searchString: string) => void;
+// }
 
-function Navbar( {currentProfile = location.state, onSearch, searchBarText, setSearchBarText}: Props ) {
+function Navbar( {currentProfile = location.state, setSearchBarText} ) {
   const SearchBarStyle = {
     width: "400px",
     height: "40px",
@@ -42,14 +41,6 @@ function Navbar( {currentProfile = location.state, onSearch, searchBarText, setS
   //     document.removeEventListener("keydown", keyDownHandler);
   //   };
   // }, [searchBarText]);
-
-  
-  useEffect(() => {
-    console.log("=====================================");
-    console.log(location.state);
-    console.log("=====================================");
-  }
-  , [location.state]);
 
   return (
     <>
@@ -90,7 +81,7 @@ function Navbar( {currentProfile = location.state, onSearch, searchBarText, setS
               aria-label="Search"
               id="searchBarText"
               name="searchBarText"
-              onChange={(event) => setSearchBarText!(event.target.value)}
+              onChange={(event) => setSearchBarText(event.target.value)}
               style={SearchBarStyle}
             />
               {/* <button className="btn btn-outline-success" type="submit">Search</button> */}

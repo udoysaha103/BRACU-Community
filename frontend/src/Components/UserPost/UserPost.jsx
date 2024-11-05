@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router';
 import Comment from "../Comment/Comment";
 import axios from "axios";
 
-interface Props {
-  details: object;
-  currentProfile: object;
-}
+// interface Props {
+//   details: object;
+//   currentProfile: object;
+// }
 
-function UserPost({ details, currentProfile }: Props) {
+function UserPost({ details, currentProfile }) {
   const [likeGiven, setLikeGiven] = useState(false);
   const [isShared, setIsShared] = useState(false);
   const [commentText, setCommentText] = useState("");
@@ -110,7 +110,7 @@ function UserPost({ details, currentProfile }: Props) {
       });
   };
 
-  const commentSubmit = (event: any) => {
+  const commentSubmit = (event) => {
     event.preventDefault();
     axios
       .post("http://localhost:3000/comment/create", {

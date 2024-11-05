@@ -1,11 +1,10 @@
-import { ReactNode } from "react";
 import "./BackgroundPic.css"
 
-interface Props {
-    children?: ReactNode;
-}
+// interface Props {
+//     children?: ReactNode;
+// }
 
-function BackgroundPic( { children }: Props ) {
+function BackgroundPic( { children }) {
   return (
     <div className="w-100 main_back">{children}</div>
   )

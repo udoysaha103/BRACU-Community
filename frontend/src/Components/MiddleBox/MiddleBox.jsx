@@ -2,13 +2,13 @@ import "./MiddleBox.css"
 import MiddleBoxRaw from "./MiddleBoxRaw";
 import BackgroundPic from "../LoginOrSignupBG/BackgroundPic"
 
-interface Props {
-    logo?: string;
-    children?: React.ReactNode;
-    logo_name?: string;
-}
+// interface Props {
+//     logo?: string;
+//     children?: React.ReactNode;
+//     logo_name?: string;
+// }
 
-function MiddleBox( { logo, children, logo_name }: Props ) {
+function MiddleBox( { logo, children, logo_name }) {
   return (
     <>
       <BackgroundPic>

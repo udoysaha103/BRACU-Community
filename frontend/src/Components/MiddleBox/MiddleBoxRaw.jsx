@@ -1,13 +1,13 @@
 import "./MiddleBox.css";
 import BackgroundPic from "../LoginOrSignupBG/BackgroundPic";
 
-interface Props {
-  children?: React.ReactNode;
-  classes?: string;
-  blur?: string;
-}
+// interface Props {
+//   children?: React.ReactNode;
+//   classes?: string;
+//   blur?: string;
+// }
 
-function MiddleBoxRaw({ children, classes, blur = "10px" }: Props) {
+function MiddleBoxRaw({ children, classes, blur = "10px" }) {
   const center_box = {
     width: "60%",
     height: "80vh",

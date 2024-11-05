@@ -2,12 +2,12 @@ import "./Comment.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface Props {
-  allDetails: object;
-  currentProfile: object;
-}
+// interface Props {
+//   allDetails: object;
+//   currentProfile: object;
+// }
 
-function Comment({ allDetails, currentProfile }: Props) {
+function Comment({ allDetails, currentProfile }) {
   console.log(allDetails.profile_picture)
   const [likeGiven, setLikeGiven] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
@@ -19,7 +19,7 @@ function Comment({ allDetails, currentProfile }: Props) {
         }`,
         { comment_id: allDetails.comment_id, user_id: currentProfile.user_id }
       )
-      .then((res) => {
+      .then(() => {
         setLikeGiven(!likeGiven);
       })
       .catch((err) => {

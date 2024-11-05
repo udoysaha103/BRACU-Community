@@ -14,7 +14,7 @@ function Newsfeed() {
   const [searchBarText, setSearchBarText] = useState("");
   const [statusText, setStatusText] = useState("");
 
-  const usrSearch = (searchStr: string) => {
+  const usrSearch = (searchStr) => {
     if (searchStr === "") {
       axios
         .get(
