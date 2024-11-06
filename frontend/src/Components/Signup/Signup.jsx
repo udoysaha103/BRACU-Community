@@ -94,7 +94,7 @@ function Signup() {
     }
 
     axios
-      .post("http://localhost:3000/user/new", {
+      .post(`https://api.bracucommunity.xyz/user/new`, {
         firstName: fName,
         lastName: lName,
         email: email,

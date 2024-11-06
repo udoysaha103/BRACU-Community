@@ -19,7 +19,7 @@ function ChatTextPanel({ currentProfile, activeHead }) {
       return;
     }
     axios
-      .post("http://localhost:3000/chat/create", {
+      .post("https://api.bracucommunity.xyz/chat/create", {
         sender_id: currentProfile.user_id,
         receiver_id: activeHead.user_id,
         content: text,
@@ -36,7 +36,7 @@ function ChatTextPanel({ currentProfile, activeHead }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/user/getdetails/${activeHead.user_id}`)
+      .get(`https://api.bracucommunity.xyz/user/getdetails/${activeHead.user_id}`)
       .then((res) => {
         setChatHeadProfile(res.data);
       })
@@ -52,7 +52,7 @@ function ChatTextPanel({ currentProfile, activeHead }) {
       <div id={styles.topbar}>
         <div id={styles.topbarContent}>
           <img 
-            src={!chatHeadProfile.profile_picture?`./${chatHeadProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${chatHeadProfile.profile_picture}`}
+            src={!chatHeadProfile.profile_picture?`./${chatHeadProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`https://api.bracucommunity.xyz/uploads/${chatHeadProfile.profile_picture}`}
             alt="Pic"
             id={styles.profilepic}
           /> 

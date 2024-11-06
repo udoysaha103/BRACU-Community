@@ -18,7 +18,7 @@ function Newsfeed() {
     if (searchStr === "") {
       axios
         .get(
-          `http://localhost:3000/user/getrandomusers/10/${location.state.user_id}`
+          `https://api.bracucommunity.xyz/user/getrandomusers/10/${location.state.user_id}`
         )
         .then((res) => {
           setUsrData(res.data);
@@ -27,7 +27,7 @@ function Newsfeed() {
     } else {
       axios
         .get(
-          `http://localhost:3000/user/getmatchedusers/50/${location.state.user_id}/${searchStr}`
+          `https://api.bracucommunity.xyz/user/getmatchedusers/50/${location.state.user_id}/${searchStr}`
         )
         .then((res) => {
           setUsrData(res.data);
@@ -43,7 +43,7 @@ function Newsfeed() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3000/post/getallnewsfeed/${location.state.user_id}`
+        `https://api.bracucommunity.xyz/post/getallnewsfeed/${location.state.user_id}`
       )
       .then((res) => {
         setUsrPost(res.data);
@@ -53,7 +53,7 @@ function Newsfeed() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3000/user/getrandomusers/10/${location.state.user_id}`
+        `https://api.bracucommunity.xyz/user/getrandomusers/10/${location.state.user_id}`
       )
       .then((res) => {
         setUsrData(res.data);

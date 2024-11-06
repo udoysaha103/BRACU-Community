@@ -63,7 +63,7 @@ function Login() {
 
     // if email and password are correct, navigate to newsfeed with correct user profile
     axios
-      .get(`http://localhost:3000/user/getuser/${email}/${password}`)
+      .get(`https://api.bracucommunity.xyz/user/getuser/${email}/${password}`)
       .then((res) => {
         console.log(res.data);
         if (res.data.length == 1) {

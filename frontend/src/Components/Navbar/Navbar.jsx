@@ -106,7 +106,7 @@ function Navbar( {currentProfile = location.state, setSearchBarText} ) {
             <div> {/* Profile */}
               <button className="navbar" onClick={() => navigate('/profile', {state: {currentProfile: currentProfile, targetProfile: currentProfile}})} onDoubleClick={() => navigate('/')}>
                 <img
-                  src={!currentProfile.profile_picture?`./${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${currentProfile.profile_picture}`}
+                  src={!currentProfile.profile_picture?`./${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`https://api.bracucommunity.xyz/uploads/${currentProfile.profile_picture}`}
                   alt="Profile"
                   className="ProfileStyle"
                 />

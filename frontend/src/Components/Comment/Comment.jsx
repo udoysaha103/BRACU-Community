@@ -14,7 +14,7 @@ function Comment({ allDetails, currentProfile }) {
   const handleReaction = () => {
     axios
       .post(
-        `http://localhost:3000/comment/${
+        `https://api.bracucommunity.xyz/comment/${
           likeGiven ? "unlike" : "like"
         }`,
         { comment_id: allDetails.comment_id, user_id: currentProfile.user_id }
@@ -29,7 +29,7 @@ function Comment({ allDetails, currentProfile }) {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3000/comment/likecount/${allDetails.comment_id}`
+        `https://api.bracucommunity.xyz/comment/likecount/${allDetails.comment_id}`
       )
       .then((res) => {
         setLikeCount(res.data[0].likecount);
@@ -38,7 +38,7 @@ function Comment({ allDetails, currentProfile }) {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3000/comment/isliked/${allDetails.comment_id}/${currentProfile.user_id}`
+        `https://api.bracucommunity.xyz/comment/isliked/${allDetails.comment_id}/${currentProfile.user_id}`
       )
       .then((res) => {
         if (res.data.length == 1) {
@@ -55,7 +55,7 @@ function Comment({ allDetails, currentProfile }) {
       <div className="row">
         <div className="col-1 mt-1">
         <img
-            src={!allDetails.profile_picture?`./${allDetails["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${allDetails.profile_picture}`}
+            src={!allDetails.profile_picture?`./${allDetails["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`https://api.bracucommunity.xyz/uploads/${allDetails.profile_picture}`}
             alt="Profile"
             className="ProfileStyle"
           />

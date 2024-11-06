@@ -13,7 +13,7 @@ function Chat() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/chat/get-chat-heads/${location.state.currentProfile.user_id}`)
+      .get(`https://api.bracucommunity.xyz/chat/get-chat-heads/${location.state.currentProfile.user_id}`)
       .then((res) => {
         setChatHeads(res.data);
       })

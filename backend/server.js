@@ -5,6 +5,9 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 
 const userRouter = require('./routes/user');
 const postRouter = require('./routes/post');
@@ -18,7 +21,7 @@ app.use('/verify', verifyRouter);
 app.use('/chat', chatRouter);
 app.use("/uploads",express.static(path.join(__dirname, "./uploads/")));
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log('Server is running on port ' + PORT);
 });

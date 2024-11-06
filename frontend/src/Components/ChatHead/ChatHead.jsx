@@ -14,7 +14,7 @@ function ChatHead({ currentProfile, chatHead, setActiveHead }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/user/getdetails/${chatHead.user_id}`)
+      .get(`https://api.bracucommunity.xyz/user/getdetails/${chatHead.user_id}`)
       .then((res) => {
         setChatHeadProfile(res.data);
       })
@@ -23,7 +23,7 @@ function ChatHead({ currentProfile, chatHead, setActiveHead }) {
       });
     
     if (seenStatus === 0) {
-      axios.get(`http://localhost:3000/chat/get-last-message/${currentProfile.user_id}/${chatHead.user_id}`)
+      axios.get(`https://api.bracucommunity.xyz/chat/get-last-message/${currentProfile.user_id}/${chatHead.user_id}`)
       .then((res) => {
         if (res.data.send_user_id === currentProfile.user_id) {
           setSeenStatus(1);
@@ -41,7 +41,7 @@ function ChatHead({ currentProfile, chatHead, setActiveHead }) {
 
     if (chatHead.seen_status === 0) {
       axios
-        .put("http://localhost:3000/chat/update-seen-status", {
+        .put("https://api.bracucommunity.xyz/chat/update-seen-status", {
           this_id: currentProfile.user_id,
           another_id: chatHead.user_id,
         })

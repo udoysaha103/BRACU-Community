@@ -27,7 +27,7 @@ function UserPost({ details, currentProfile }) {
   }
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/comment/getall/${details["post_id"]}`)
+      .get(`https://api.bracucommunity.xyz/comment/getall/${details["post_id"]}`)
       .then((res) => {
         setAllComments(res.data);
         setCommentCnt(res.data.length);
@@ -36,7 +36,7 @@ function UserPost({ details, currentProfile }) {
   }, [commentText]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/post/likecount/${details["post_id"]}`)
+      .get(`https://api.bracucommunity.xyz/post/likecount/${details["post_id"]}`)
       .then((res) => {
         setLikeCount(parseInt(res.data.likecount));
       })
@@ -44,7 +44,7 @@ function UserPost({ details, currentProfile }) {
   }, [likeGiven]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/post/getsharecount/${details["post_id"]}`)
+      .get(`https://api.bracucommunity.xyz/post/getsharecount/${details["post_id"]}`)
       .then((res) => {
         setShareCount(parseInt(res.data.sharecount));
       })
@@ -53,7 +53,7 @@ function UserPost({ details, currentProfile }) {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3000/post/isliked/${details["post_id"]}/${currentProfile["user_id"]}`
+        `https://api.bracucommunity.xyz/post/isliked/${details["post_id"]}/${currentProfile["user_id"]}`
       )
       .then((res) => {
         if (res.data.length > 0) setLikeGiven(true);
@@ -62,7 +62,7 @@ function UserPost({ details, currentProfile }) {
 
     axios
       .get(
-        `http://localhost:3000/post/isshared/${details["post_id"]}/${currentProfile["user_id"]}`
+        `https://api.bracucommunity.xyz/post/isshared/${details["post_id"]}/${currentProfile["user_id"]}`
       )
       .then((r) => {
         if (r.data.length > 0) setIsShared(true);
@@ -72,7 +72,7 @@ function UserPost({ details, currentProfile }) {
 
   const handleReaction = () => {
     axios
-      .post(`http://localhost:3000/post/${likeGiven ? "unlike" : "like"}`, {
+      .post(`https://api.bracucommunity.xyz/post/${likeGiven ? "unlike" : "like"}`, {
         user_id: currentProfile["user_id"],
         post_id: details["post_id"],
       })
@@ -93,7 +93,7 @@ function UserPost({ details, currentProfile }) {
     // if clicked, include the post in currentProfile's sharedPosts
     axios
       .post(
-        `http://localhost:3000/post/${
+        `https://api.bracucommunity.xyz/post/${
           !isShared ? "share" : "unshare"
         }`,
         {
@@ -113,7 +113,7 @@ function UserPost({ details, currentProfile }) {
   const commentSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3000/comment/create", {
+      .post("https://api.bracucommunity.xyz/comment/create", {
         content: commentText,
         user_id: currentProfile["user_id"],
         post_id: details["post_id"],
@@ -138,7 +138,7 @@ function UserPost({ details, currentProfile }) {
             onClick={() => console.log("Pic")}
           >
           <img
-            src={!details.creator.profilePicture?`./${details.creator["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${details.creator.profilePicture}`}
+            src={!details.creator.profilePicture?`./${details.creator["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`https://api.bracucommunity.xyz/uploads/${details.creator.profilePicture}`}
             alt="Profile"
             className="ProfileStyle"
           />
@@ -235,7 +235,7 @@ function UserPost({ details, currentProfile }) {
           >
             <div className="col-1 picButton">
               <img
-                src={!currentProfile.profile_picture?`./${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${currentProfile.profile_picture}`}
+                src={!currentProfile.profile_picture?`./${currentProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`https://api.bracucommunity.xyz/uploads/${currentProfile.profile_picture}`}
                 alt="Profile"
                 className="ProfileStyleSmall"
               />

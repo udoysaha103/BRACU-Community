@@ -21,7 +21,7 @@ function UserProfile() {
     const nameElement = document.createElement("div");
     nameElement.setAttribute("id", "name");
     nameElement.innerHTML = "Updating...";
-    await axios.post(`http://localhost:3000/user/updatename`, {user_id: location.state.currentProfile.user_id, name: name})
+    await axios.post(`https://api.bracucommunity.xyz/user/updatename`, {user_id: location.state.currentProfile.user_id, name: name})
     location.state.currentProfile.firstname = name.split(" ")[0];
     location.state.currentProfile.lastname = name.split(" ")[1];
     navigate("/profile", {state: location.state})
@@ -32,7 +32,7 @@ function UserProfile() {
   const handlePhotoUpload = async (e) => {
     const formData = new FormData();
     formData.append("myfile", e.target.files[0]);
-    const response = await axios.post(`http://localhost:3000/user/uploadphoto/${location.state.currentProfile.user_id}`, formData)
+    const response = await axios.post(`https://api.bracucommunity.xyz/user/uploadphoto/${location.state.currentProfile.user_id}`, formData)
     location.state.currentProfile.profile_picture = response.data.file;
     navigate("/profile", {state: location.state})
   }
@@ -61,7 +61,7 @@ function UserProfile() {
     nameElement?.replaceWith(input);
   }
   const handleConnect = (sent_id, received_id) => {
-    axios.post(`http://localhost:3000/user/sendrequest`, {user_id: sent_id, received_id: received_id})
+    axios.post(`https://api.bracucommunity.xyz/user/sendrequest`, {user_id: sent_id, received_id: received_id})
     .then(res => {
       if (res.data["msg"] === "connected") {
         setConnect(true);
@@ -78,7 +78,7 @@ function UserProfile() {
 
 
     // first text
-    axios.post(`http://localhost:3000/chat/create`, {sender_id: sent_id, receiver_id: received_id, content: ""})
+    axios.post(`https://api.bracucommunity.xyz/chat/create`, {sender_id: sent_id, receiver_id: received_id, content: ""})
     .then(res => {
       console.log(res.data);
     })
@@ -89,7 +89,7 @@ function UserProfile() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3000/post/getall/${location.state.targetProfile.user_id}`
+        `https://api.bracucommunity.xyz/post/getall/${location.state.targetProfile.user_id}`
       )
       .then((res) => {
         setUsrPost(res.data);
@@ -98,7 +98,7 @@ function UserProfile() {
   }, [statusText]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/user/checkconnection/${location.state.currentProfile.user_id}/${location.state.targetProfile.user_id}`)
+    axios.get(`https://api.bracucommunity.xyz/user/checkconnection/${location.state.currentProfile.user_id}/${location.state.targetProfile.user_id}`)
     .then(res => {
       if (res.data["msg"] === "connected") {
         setConnect(true);
@@ -129,7 +129,7 @@ function UserProfile() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3000/user/getfriendcount/${location.state.targetProfile.user_id}`
+        `https://api.bracucommunity.xyz/user/getfriendcount/${location.state.targetProfile.user_id}`
       )
       .then((res) => {
         setFriendCount(res.data.friendcount);
@@ -140,7 +140,7 @@ function UserProfile() {
 
     axios
       .get(
-        `http://localhost:3000/user/getmutualcount/${location.state.currentProfile.user_id}/${location.state.targetProfile.user_id}`
+        `https://api.bracucommunity.xyz/user/getmutualcount/${location.state.currentProfile.user_id}/${location.state.targetProfile.user_id}`
       )
       .then((res) => {
         setMutualFriend(res.data.mutual);
@@ -173,7 +173,7 @@ function UserProfile() {
                   />
                 <div id="profile-container">
                   <img
-                    src={!location.state.targetProfile.profile_picture?`./${location.state.targetProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`http://localhost:3000/uploads/${location.state.targetProfile.profile_picture}`}
+                    src={!location.state.targetProfile.profile_picture?`./${location.state.targetProfile["gender"]==="1"?"maleAvatar.png":"femaleAvatar.png"}`:`https://api.bracucommunity.xyz/uploads/${location.state.targetProfile.profile_picture}`}
                     alt="Profile"
                     className="profile-photo"
                     onDoubleClick={handlePhotoChange}

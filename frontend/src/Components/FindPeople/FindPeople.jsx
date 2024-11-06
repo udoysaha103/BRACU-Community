@@ -16,7 +16,7 @@ function FindPeople({allDetails, currentProfile}) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/user/getmutualcount/${allDetails.user_id}/${currentProfile.user_id}`).then(res => setMutual(res.data.mutual)).catch(err => console.log(err));
+    axios.get(`https://api.bracucommunity.xyz/user/getmutualcount/${allDetails.user_id}/${currentProfile.user_id}`).then(res => setMutual(res.data.mutual)).catch(err => console.log(err));
   }, [mutual])
 
   const handleClick = () => {
